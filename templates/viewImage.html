@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>View Page</h1>
+<table>
+    <tr>
+        <td>Width <input value={{ obj.img.width }} id="width"> Height <input value={{ obj.img.height }} id="height">
+        <button onclick="mouseOver()">Change</button></td>
+
+    </tr>
+    <tr>
+        <td>
+            <img src="{{ obj.img.url }}" class="img-responsive"
+                 style="width: 60%; float: left; margin-right: 10px;" id="image"/>
+        </td>
+    </tr>
+</table>
+<script type='text/javascript'>
+    function mouseOver() {
+    var w = document.getElementById('width').value.toString() + "px";
+    var h = document.getElementById('height').value.toString() + "px";
+    document.getElementById('image').style.width = w;
+    document.getElementById('image').style.height = h;
+   }
+</script>
+{% endblock content %}
+

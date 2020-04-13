@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Images Project!</h1>
+<table>
+    {% for image in images %}
+
+    {% cycle '<tr>' '' '' '' '' %}
+        <td width="20%">
+            <br/>
+            <a href="/{{ image.id }}/">
+                <img src="{{ image.img.url }}" class="img-responsive"
+                     style="width: 90%; float: left; margin-right: 10px;"/>
+            </a>
+        </td>
+        {% cycle '' '' '' '' '</tr>' %}
+    {% endfor %}
+</table>
+
+{% endblock content %}
+
